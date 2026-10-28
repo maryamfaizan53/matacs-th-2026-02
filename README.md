@@ -5,7 +5,7 @@
 | **Name** | Maryam Faizan |
 | **Reference** | MATACS-TH-2026-02 |
 | **Role** | Associate Software Developer |
-| **Time actually spent** | About 3 hours: 60 minutes on the design, the rest on the optional prototype |
+| **Time actually spent** | About 2.5 hours in total: analysing the brief, designing, and verifying the results |
 
 ## The design in three sentences
 
@@ -26,9 +26,7 @@ AI **reads**: one extraction call per proposal turns the PDF into fields, and ev
 
 ## How I used AI tools
 
-_TODO: rewrite in your own words, 2–3 sentences, and keep it true._ Draft:
-
-> I used Claude as a sparring partner to stress-test my design, draft the prototype code and tighten the wording of the write-up. I checked every score by hand against the sample proposals and ran the prototype's tests. **Where I disagreed:** _describe one real change you made to the AI's output and why, e.g. a scoring rule, an assumption or a ranking decision you changed after reviewing it._
+I used Claude Code throughout: I gave it the brief to analyse, asked it to walk me through the steps for building the project so I understood it in detail, and then let it build the design files and prototype. **Where I disagreed:** I did not accept its first plan as-is; I changed the parts I wanted done differently before letting it build, and after verifying the output I made further changes myself. I checked the results before submitting this final version.
 
 ## Assumptions
 
