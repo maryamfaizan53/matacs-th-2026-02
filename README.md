@@ -26,7 +26,7 @@ AI **reads**: one extraction call per proposal turns the PDF into fields, and ev
 
 ## How I used AI tools
 
-I used Claude Code throughout: I gave it the brief to analyse, asked it to walk me through the steps for building the project so I understood it in detail, and then let it build the design files and prototype. **Where I disagreed:** I did not accept its first plan as-is; I changed the parts I wanted done differently before letting it build, and after verifying the output I made further changes myself. I checked the results before submitting this final version.
+I used Claude Code throughout: I gave it the brief to analyse, asked it to walk me through the steps for building the project so I understood it in detail, and then let it build the design files and prototype. **Where I disagreed:** Claude's first version scored and ranked proposal D even though D gives no committed completion date. I changed it so D is flagged for a person instead, because a missing date should be confirmed with the bidder, not guessed: if D commits to 12 weeks it would move from unranked to 2nd. I checked the results before submitting this final version.
 
 ## Assumptions
 
