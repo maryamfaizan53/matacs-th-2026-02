@@ -1,0 +1,5 @@
+.env
+__pycache__/
+.pytest_cache/
+prototype/proposals/*.txt
+prototype/output/cache/
