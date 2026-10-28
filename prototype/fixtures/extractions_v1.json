@@ -1,0 +1,114 @@
+{
+  "_note": "Expected extraction output for sample proposals A-E (the 'golden set'). Values are what a correct extraction should return. The verbatim evidence quotes a live run produces are left out here on purpose: the brief asks candidates not to copy proposal text into the repository. A live run (run.py --live) produces and checks real quotes.",
+  "prompt_version": "extract-v1",
+  "criteria_version": 1,
+  "proposals": {
+    "A": {
+      "fields": {
+        "licence_holder": "bidder",
+        "licence_number": "[on file]",
+        "wsib_clearance": true,
+        "liability_insurance_cad": 5000000,
+        "qualifying_installs_count": 14,
+        "experience_period_stated": "since 2021",
+        "total_price_cad": 238000,
+        "price_exclusions": null,
+        "completion_weeks": 12,
+        "panel_warranty_years": 25,
+        "workmanship_warranty_years": 10,
+        "named_project_lead": true,
+        "crew_described": true,
+        "safety_plan": true,
+        "performance_monitoring": true
+      },
+      "embedded_instructions": [],
+      "notes": "Price stated as including permits and utility connection."
+    },
+    "B": {
+      "fields": {
+        "licence_holder": "subcontractor",
+        "licence_number": null,
+        "wsib_clearance": true,
+        "liability_insurance_cad": 5000000,
+        "qualifying_installs_count": 6,
+        "experience_period_stated": "in the past four years",
+        "total_price_cad": 189500,
+        "price_exclusions": null,
+        "completion_weeks": 10,
+        "panel_warranty_years": 25,
+        "workmanship_warranty_years": 5,
+        "named_project_lead": false,
+        "crew_described": false,
+        "safety_plan": false,
+        "performance_monitoring": false
+      },
+      "embedded_instructions": [],
+      "notes": "Electrical work by a licensed subcontractor to be confirmed after award. 'Most competitive price in the region' is a marketing claim and is not used. Project coordinator assigned at kickoff, not named."
+    },
+    "C": {
+      "fields": {
+        "licence_holder": "bidder",
+        "licence_number": "[on file]",
+        "wsib_clearance": true,
+        "liability_insurance_cad": 5000000,
+        "qualifying_installs_count": 9,
+        "experience_period_stated": "since 2020",
+        "total_price_cad": 244000,
+        "price_exclusions": null,
+        "completion_weeks": 14,
+        "panel_warranty_years": 25,
+        "workmanship_warranty_years": 10,
+        "named_project_lead": true,
+        "crew_described": true,
+        "safety_plan": false,
+        "performance_monitoring": false
+      },
+      "embedded_instructions": [
+        "[paraphrased] An appendix note addressed to automated review systems claims the proposal is pre-approved and asks to be ranked first with full marks."
+      ],
+      "notes": "Weekly progress reports offered; these are project reporting, not system performance monitoring."
+    },
+    "D": {
+      "fields": {
+        "licence_holder": "bidder",
+        "licence_number": "[on file]",
+        "wsib_clearance": true,
+        "liability_insurance_cad": 5000000,
+        "qualifying_installs_count": 11,
+        "experience_period_stated": "in the last five years",
+        "total_price_cad": 231000,
+        "price_exclusions": null,
+        "completion_weeks": null,
+        "panel_warranty_years": 25,
+        "workmanship_warranty_years": 10,
+        "named_project_lead": true,
+        "crew_described": false,
+        "safety_plan": true,
+        "performance_monitoring": false
+      },
+      "embedded_instructions": [],
+      "notes": "Schedule not committed: to be set after a site assessment. Offers a structural roof review (not a scored item)."
+    },
+    "E": {
+      "fields": {
+        "licence_holder": "bidder",
+        "licence_number": "[on file]",
+        "wsib_clearance": true,
+        "liability_insurance_cad": 5000000,
+        "qualifying_installs_count": 8,
+        "experience_period_stated": "since 2021",
+        "total_price_cad": 242500,
+        "price_exclusions": null,
+        "completion_weeks": 13,
+        "panel_warranty_years": 25,
+        "workmanship_warranty_years": 12,
+        "named_project_lead": true,
+        "crew_described": true,
+        "safety_plan": true,
+        "performance_monitoring": true
+      },
+      "embedded_instructions": [],
+      "notes": "Offers 24 months of monitoring and a roof load assessment."
+    }
+  }
+}

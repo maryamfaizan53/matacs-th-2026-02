@@ -12,7 +12,7 @@
 | C | flagged | – | 61.8 (provisional) | Contains text telling automated reviewers to rank it first |
 | B | ineligible | – | – | Licence held by a subcontractor "to be confirmed", not the bidder |
 
-If D confirms 12 weeks it scores 84.8 and moves to 2nd, which is why the tool asks instead of guessing. C's hidden instruction changed nothing; its score comes from facts only.
+If D confirms 12 weeks it scores 84.8 and moves to 2nd, so the tool asks instead of guessing. C's hidden instruction changed nothing.
 
 **Scoring rules** (configured per criterion by the admin, chosen from a small menu):
 - *Lower is better within a limit* (price, timeline): best eligible bid = full marks, the limit ($260k / 16 weeks) = zero, straight line between.
@@ -25,14 +25,14 @@ If D confirms 12 weeks it scores 84.8 and moves to 2nd, which is why the tool as
 ## 1. AI vs. rules
 
 - **AI (one step): extraction.** Turning free-text PDFs into fields ("licence held by a subcontractor to be confirmed" → `licence_holder: subcontractor`) needs language understanding. Rules would break on every new wording.
-- **Code/rules: everything else.** Reading the PDF, checking quotes, mandatory pass/fail, budget and deadline limits, scoring, ranking, writing the reason line (a template filled from the score breakdown), and the audit log.
-- **Why there:** AI is good at reading but weak at being consistent, explainable and hard to manipulate. Scores need all three, and are simple arithmetic once facts are known. So the AI never sees weights, never compares bids, never outputs a score.
+- **Code/rules: everything else.** Reading the PDF, checking quotes, mandatory pass/fail, budget and deadline limits, scoring, ranking, the reason line (a template filled from the score breakdown), and the audit log.
+- **Why there:** AI is good at reading but weak at being consistent, explainable and hard to manipulate. Scores need all three, and are simple arithmetic once facts are known. So the AI never sees weights, compares bids or outputs a score.
 
 ## 2. Consistency and explainability
 
 - **Repeatable:** temperature 0, strict JSON schema, pinned model and prompt version. Each extraction is stored, keyed by document hash + prompt version + criteria version. Ranking the same set twice reuses stored facts, and scoring is pure code, so **the result is identical**. Ties break by lower price, then letter.
 - **Drift check:** the five samples are a regression test; a new model or prompt must reproduce the expected facts first.
-- **Explainable:** for each proposal the reviewer sees a fact sheet (every value beside its quote from the PDF), points per criterion with the inputs used, and every flag. Example: "A: 92.7: full marks on experience (14 installs), timeline (12 wk) and team; biggest loss is price ($238,000, −6.0)." Because the reason is generated from the numbers, it cannot contradict them.
+- **Explainable:** for each proposal the reviewer sees a fact sheet (every value beside its quote from the PDF), points per criterion with the inputs used, and every flag. Example: "A: 92.7: full marks on experience (14 installs), timeline (12 wk) and team; biggest loss is price ($238,000, −6.0)." Generated from the numbers, the reason cannot contradict them.
 
 ## 3. Human in the loop
 
@@ -58,7 +58,7 @@ If D confirms 12 weeks it scores 84.8 and moves to 2nd, which is why the tool as
 | **Made-up facts** | Every value needs a quote that code finds in the PDF, or it is dropped and flagged; "not stated" stays empty and is never guessed (D) |
 | **Manipulation / prompt injection** (C) | Proposal marked as untrusted data in the prompt; the AI has no power to score, so injected text has nothing to change; separate keyword scan plus AI report → flag for a human |
 | **Marketing language** ("most competitive", B) | Only verifiable facts are extracted; adjectives earn nothing |
-| **Bias** (towards big firms, polished writing, long proposals) | Same fixed fields and formulas for all; checklist scoring ignores length and style; names can be hidden during review; reviewers can see score distributions per category |
+| **Bias** (towards big firms, polished writing, long proposals) | Same fixed fields and formulas for all; checklist scoring ignores length and style; company names can be hidden during review |
 | **Incomplete or tricky bids** (subcontracted licence, unclear period) | Mandatory rules say *the bidder* must hold the licence; date-window warnings |
-| **Over-reliance on the tool** | Flags block ranking; overrides and the award stay human; the report shows provisional scores clearly |
+| **Over-reliance on the tool** | Flags block ranking; overrides and the award stay human; provisional scores are clearly labelled |
 | **Cost** | One small-model call per proposal, cached; re-scoring costs nothing |

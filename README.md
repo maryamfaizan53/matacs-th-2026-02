@@ -5,7 +5,7 @@
 | **Name** | Maryam Faizan |
 | **Reference** | MATACS-TH-2026-02 |
 | **Role** | Associate Software Developer |
-| **Time actually spent** |  "about 3 hours: 60 min design, the rest on the optional prototype"_ |
+| **Time actually spent** | About 3 hours: 60 minutes on the design, the rest on the optional prototype |
 
 ## The design in three sentences
 
